@@ -12,13 +12,24 @@ export const WrapperStatusCount = styled.div `
     border: 1px solid #222222;
     align-items: center;
     // background-color: yellow;
+    div{
+        margin: 10px;
+        text-align: center;
+    }
 `;
 
 export const WrapperUsername = styled.div `
     display: flex;
-    border: 1px solid #222222;
     align-items: center;
-    background-color: blue;
+    margin-top: 8px;
+    h3{
+        margin-right: 8px;
+    };
+    a{
+        font-size: 18px;
+        color: blue;
+        font-weight: bold;
+    }
     color: white;
 `;
 
@@ -27,11 +38,22 @@ export const WrapperInfoUser = styled.div `
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: auto;
+    height: 200px;
     margin-left: 10px;
+    h1{
+        font-size: 32px;
+        font-weight: bold;
+    }
     h3{
         margin-right: 10px;
-    }
+        font-size: 18px;
+        font-weight: bold;
+    };
+    h4{
+        font-size: 16px;
+        font-weight: bold;
+    };
+
 `;
 
 export const WrapperImage = styled.img `

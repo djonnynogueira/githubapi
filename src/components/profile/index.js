@@ -1,7 +1,18 @@
-import React from 'react'
+
+import useGithub from '../../hooks/github-hooks'
 import * as S from './styled'
 
 const Profile = () => {
+
+    const { gitHubState } = useGithub()
+
+    // useEffect(()) => {
+    //     effect; 
+    //     return() => {
+    //         cleanup;
+    //     }
+    // }, [gitHubState]);
+
     return (
     <S.Wrapper>
             
@@ -11,24 +22,51 @@ const Profile = () => {
             
           <S.WrapperInfoUser>
               <div>
-                <h1>Djonny Nogueira</h1>
-                <S.WrapperUsername>
+                <h1>{gitHubState.user.name}</h1>
+                <S.WrapperUserGeneric>
                     <h3>Username:</h3>
-                    <a href='https://github.com/djonnynogueira' target="_blank" rel="noreferrer">djonny</a>
-                </S.WrapperUsername>
+                    <a href='{gitHubState.user.html_url}' target="_blank" rel="noreferrer">
+                        {gitHubState.user.login}
+                    </a>
+                </S.WrapperUserGeneric>
+                {/* -- */}
+                <S.WrapperUserGeneric>
+                    <h3>Company:</h3>
+                    <span>
+                        {gitHubState.user.company}
+                    </span>
+                </S.WrapperUserGeneric>
+                <S.WrapperUserGeneric>
+                    <h3>Location:</h3>
+                    <span>
+                        {gitHubState.user.location}
+                    </span>
+                </S.WrapperUserGeneric>
+                <S.WrapperUserGeneric>
+                    <h3>Blog:</h3>
+                    <span>
+                        {gitHubState.user.blog}
+                    </span>
+                </S.WrapperUserGeneric>
+                 {/* -- */}
+
                 </div>
                 <S.WrapperStatusCount>
                     <div>
                         <h4>Followers: </h4>
-                        <span>5</span>
-                    </div>
-                    <div>
-                        <h4>Starreds: </h4>
-                        <span>5</span>
+                        <span>{gitHubState.user.followers}</span>
                     </div>
                     <div>
                         <h4>Followings: </h4>
-                        <span>5</span>
+                        <span>{gitHubState.user.following}</span>
+                    </div>
+                    <div>
+                        <h4>Gists: </h4>
+                        <span>{gitHubState.user.public_gists}</span>
+                    </div>
+                    <div>
+                        <h4>Repos: </h4>
+                        <span>{gitHubState.user.public_repos}</span>
                     </div>
                 </S.WrapperStatusCount>
             </S.WrapperInfoUser>

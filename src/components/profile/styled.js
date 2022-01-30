@@ -4,7 +4,7 @@ export const Wrapper = styled.div `
     display: flex;
     border: 1px solid #000;
     align-items: flex-start;
-    background-color: red;
+    //background-color: red;
 `;
 
 export const WrapperStatusCount = styled.div `

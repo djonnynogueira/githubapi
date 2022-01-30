@@ -18,7 +18,7 @@ const Profile = () => {
             
             <S.WrapperImage  alt="avatar" 
                
-            src="https://avatars.githubusercontent.com/u/13878534?v=4" />
+           src = {gitHubState.user.avatar} />
             
           <S.WrapperInfoUser>
               <div>

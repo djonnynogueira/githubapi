@@ -13,6 +13,7 @@ const GitHubProvider = ({ children }) => {
     const [gitHubState, setGitHubState] = useState({
         loading: false,
         user: {
+        avatar: undefined,
         login: undefined,
         name: undefined,
         html_url: undefined,
@@ -33,6 +34,7 @@ const getUser = (username) => {
         setGitHubState((prevState) =>({
             ...prevState, 
             user:{
+                avatar: data.avatar_url,
                 login: data.login,
                 name: data.name,
                 html_url: data.html_url,
